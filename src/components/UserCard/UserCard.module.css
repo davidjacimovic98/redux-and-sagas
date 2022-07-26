@@ -1,0 +1,13 @@
+.city_card_container {
+  background-color: lightblue;
+  padding: 10px 20px;
+  width: 15vw;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+  margin-bottom: 30px;
+}
+
+.second_row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

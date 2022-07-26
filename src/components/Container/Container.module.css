@@ -1,0 +1,35 @@
+.main_div {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 80vw;
+  margin: 5vh auto;
+}
+
+.input_container input {
+  margin-bottom: 5px;
+}
+
+.input_container p {
+  color: red;
+  font-size: 12px;
+  margin-top: -5px;
+}
+
+.btn_submit {
+  width: 100%;
+}
+
+form {
+  background-color: lightblue;
+  padding: 20px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.btn_toggle_unit {
+  margin: 20px;
+}
+
+.temp_btns {
+  margin-left: 20px;
+}
