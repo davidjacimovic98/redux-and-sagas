@@ -3,14 +3,18 @@ import styles from "./TempUnitButtons.module.css";
 import { useTempUnitContext } from "../../context/temp_unit_context";
 
 const TempUnitButtons = () => {
-  const { setCelsius } = useTempUnitContext();
+  const { setUnit } = useTempUnitContext();
 
   const tempInCelsius = () => {
-    setCelsius(true);
+    setUnit("celsius");
   };
   const tempInFarenheit = () => {
-    setCelsius(false);
+    setUnit("farenheit");
   };
+  const tempInKelvin = () => {
+    setUnit("kelvin");
+  };
+
   return (
     <div className={styles.temp_btns}>
       Show current temperature in degree:
@@ -20,6 +24,9 @@ const TempUnitButtons = () => {
         </button>
         <button className={styles.btn_toggle_unit} onClick={tempInFarenheit}>
           Farenheit
+        </button>
+        <button className={styles.btn_toggle_unit} onClick={tempInKelvin}>
+          Kelvin
         </button>
       </div>
     </div>

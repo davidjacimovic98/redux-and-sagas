@@ -3,9 +3,14 @@ import React, { useContext, useState } from "react";
 const TempUnitContext = React.createContext();
 
 export const TempUnitProvider = ({ children }) => {
-  const [celsius, setCelsius] = useState(true);
+  const [unit, setUnit] = useState("celsius");
+  const isCelsius = unit === "celsius";
+  const isFarenheit = unit === "farenheit";
+  const isKelvin = unit === "kelvin";
   return (
-    <TempUnitContext.Provider value={{ celsius, setCelsius }}>
+    <TempUnitContext.Provider
+      value={{ unit, setUnit, isCelsius, isFarenheit, isKelvin }}
+    >
       {children}
     </TempUnitContext.Provider>
   );

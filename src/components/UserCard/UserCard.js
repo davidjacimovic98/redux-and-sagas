@@ -3,7 +3,7 @@ import { useTempUnitContext } from "../../context/temp_unit_context";
 import styles from "./UserCard.module.css";
 
 const UserCard = ({ city, firstName, lastName }) => {
-  const { celsius } = useTempUnitContext();
+  const { unit, isCelsius, isFarenheit, isKelvin } = useTempUnitContext();
 
   if (!city) {
     return <p>Loading...</p>;
@@ -21,9 +21,9 @@ const UserCard = ({ city, firstName, lastName }) => {
         <div className={styles.second_row}>
           <p>{name}</p>
           <span>
-            {celsius
-              ? temp.toFixed(1) + "℃"
-              : (temp * 1.8 + 32).toFixed(1) + "℉"}
+            {isCelsius && temp.toFixed(1) + "℃"}
+            {isFarenheit && (temp * 1.8 + 32).toFixed(1) + "℉"}
+            {isKelvin && (temp + 273.15).toFixed(1) + "K"}
           </span>
         </div>
       </div>
