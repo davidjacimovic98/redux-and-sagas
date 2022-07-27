@@ -1,8 +1,9 @@
 import React from "react";
+import { useTempUnitContext } from "../../context/temp_unit_context";
 import styles from "./UserCard.module.css";
 
-const UserCard = ({ city, celsius, firstName, lastName }) => {
-  console.log(city);
+const UserCard = ({ city, firstName, lastName }) => {
+  const { celsius } = useTempUnitContext();
 
   if (!city) {
     return <p>Loading...</p>;
@@ -13,31 +14,21 @@ const UserCard = ({ city, celsius, firstName, lastName }) => {
     main: { temp },
   } = city;
 
-  if (celsius === true) {
-    return (
-      <div className={styles.city_card_container}>
-        <div className={styles.first_row}>
-          {firstName} {lastName}
-          <div className={styles.second_row}>
-            <p>{name}</p>
-            {temp.toFixed(1)}℃
-          </div>
+  return (
+    <div className={styles.city_card_container}>
+      <div className={styles.first_row}>
+        {firstName} {lastName}
+        <div className={styles.second_row}>
+          <p>{name}</p>
+          <span>
+            {celsius
+              ? temp.toFixed(1) + "℃"
+              : (temp * 1.8 + 32).toFixed(1) + "℉"}
+          </span>
         </div>
       </div>
-    );
-  } else {
-    return (
-      <div className={styles.city_card_container}>
-        <div className={styles.first_row}>
-          {firstName} {lastName}
-          <div className={styles.second_row}>
-            <p>{name}</p>
-            {(temp * 1.8 + 32).toFixed(1)}℉
-          </div>
-        </div>
-      </div>
-    );
-  }
+    </div>
+  );
 };
 
 export default UserCard;

@@ -1,0 +1,7 @@
+.main_div {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 80vw;
+  margin: 5vh auto;
+}

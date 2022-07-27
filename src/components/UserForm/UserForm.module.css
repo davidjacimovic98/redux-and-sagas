@@ -1,13 +1,6 @@
-.main_div {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 80vw;
-  margin: 5vh auto;
-}
-
 .input_container input {
   margin-bottom: 5px;
+  width: 96%;
 }
 
 .input_container p {
@@ -31,5 +24,8 @@ form {
 }
 
 .temp_btns {
-  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

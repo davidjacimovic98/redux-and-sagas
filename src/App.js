@@ -1,9 +1,12 @@
-import Container from "./components/Container/Container";
+import UserForm from "./components/UserForm/UserForm";
+import UserList from "./components/UserList/UserList";
+import styles from "./App.module.css";
 
 function App() {
   return (
-    <div>
-      <Container />
+    <div className={styles.main_div}>
+      <UserList />
+      <UserForm />
     </div>
   );
 }

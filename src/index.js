@@ -8,6 +8,7 @@ import createSagaMiddleware from "redux-saga";
 import { Provider } from "react-redux";
 import allReducers from "./reducers";
 import { watcherSaga } from "./sagas/rootSaga";
+import { TempUnitProvider } from "./context/temp_unit_context";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -20,9 +21,11 @@ sagaMiddleware.run(watcherSaga);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
+    <TempUnitProvider>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </TempUnitProvider>
   </React.StrictMode>
 );
 
