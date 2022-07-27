@@ -4,11 +4,11 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useSelector, useDispatch } from "react-redux";
 import * as actions from "../../actions";
-import { useTempUnitContext } from "../../context/temp_unit_context";
+
 
 const UserForm = () => {
   const cities = useSelector((state) => state.weather);
-  const { setCelsius } = useTempUnitContext();
+ 
   const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: {
@@ -48,28 +48,8 @@ const UserForm = () => {
     },
   });
 
-  const tempInCelsius = () => {
-    setCelsius(true);
-    formik.handleSubmit();
-  };
-  const tempInFarenheit = () => {
-    setCelsius(false);
-    formik.handleSubmit();
-  };
-
   return (
     <div>
-      <div className={styles.temp_btns}>
-        Show current temperature in degree:
-        <div>
-          <button className={styles.btn_toggle_unit} onClick={tempInCelsius}>
-            Celsius
-          </button>
-          <button className={styles.btn_toggle_unit} onClick={tempInFarenheit}>
-            Farenheit
-          </button>
-        </div>
-      </div>
       <form onSubmit={formik.handleSubmit}>
         <p>Add user</p>
         <div className={styles.input_container}>

@@ -1,0 +1,10 @@
+.btn_toggle_unit {
+  margin: 20px;
+}
+
+.temp_btns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
